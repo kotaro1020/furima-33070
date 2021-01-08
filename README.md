@@ -17,7 +17,7 @@
 ### Association
 
 - has_many :items
-- has_many :product record
+- has_many :product_records
 
 
 
@@ -45,8 +45,8 @@
 ### Association
 
 - belongs_to :user
-- has_one    :product  record
-- has_one    :shipping address
+- has_one    :product_record
+- has_one    :shipping_address
 
 
 
@@ -66,7 +66,7 @@
 
 - belongs_to :user
 - belongs_to :items
-- has_one    :shipping address
+- has_one    :shipping_address
 
 
 
@@ -86,4 +86,4 @@
 
 ### Association
 
-- belongs_to :product record
+- belongs_to :product_record
