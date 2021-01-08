@@ -29,7 +29,7 @@
 
 | Column            | Type        | Options                        |
 | ------------------| ----------- | -----------------------------  |
-| product name      | string      | null: false                    |
+| productname      | string      | null: false                    |
 | explanation       | text        | null: false                    |
 | category_id       | integer     | null: false                    |
 | productstate_id   | integer     | null: false                    | 
@@ -78,7 +78,7 @@
 | prefectures        | string     | null: false                    |
 | municipality       | string     | null: false                    |
 | address            | string     | null: false                    | 
-| buildingname       | string     | null: false                    |
+| buildingname       | string     |                                |
 | phonenumber        | string     | null: false                    |
 | product_record     | references | foreign_key: true              |
 
