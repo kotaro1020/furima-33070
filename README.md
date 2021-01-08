@@ -11,7 +11,7 @@
 | lastname          | string | NOT NULL               |
 | firstname_kana    | string | NOT NULL               |
 | lastname_kana     | string | NOT NULL               |
-| birthday          | string | NOT NULL               |
+| birthday          | date   | NOT NULL               |
 
 
 
