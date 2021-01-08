@@ -2,16 +2,16 @@
 
 ## users テーブル
 
-| Column             | Type   | Options                 |
-| ------------------ | ------ | ----------------------- |
-| nickname           | string | NOT NULL                |
-| email              | string | NOT NULL  unique: true  |
-| encrypted_password | string | NOT NULL                |
-| firstname          | string | NOT NULL                |
-| lastname           | string | NOT NULL                |
-| firstname_kana     | string | NOT NULL                |
-| lastname_kana      | string | NOT NULL                |
-| birthday           | date   | NOT NULL                |
+| Column             | Type   | Options                    |
+| ------------------ | ------ | ---------------------------|
+| nickname           | string | null: false                |
+| email              | string | null: false  unique: true  |
+| encrypted_password | string | null: false                |
+| firstname          | string | null: false                |
+| lastname           | string | null: false                |
+| firstname_kana     | string | null: false                |
+| lastname_kana      | string | null: false                |
+| birthday           | date   | null: false                |
 
 
 ### Association
@@ -29,15 +29,15 @@
 
 | Column            | Type        | Options                        |
 | ------------------| ----------- | -----------------------------  |
-| product name      | string      | NOT NULL                       |
-| explanation       | text        | NOT NULL                       |
-| category_id       | integer     | NOT NULL                       |
-| productstate_id   | integer     | NOT NULL                       | 
-| deliveryfee_id    | integer     | NOT NULL                       |
-| region_id         | integer     | NOT NULL                       |
-| deliverydate_id   | integer     | NOT NULL                       |
-| price         　　　| integer    | NOT NULL                       |
-| user_id           | references  | null: false, foreign_key: true |
+| product name      | string      | null: false                    |
+| explanation       | text        | null: false                    |
+| category_id       | integer     | null: false                    |
+| productstate_id   | integer     | null: false                    | 
+| deliveryfee_id    | integer     | null: false                    |
+| region_id         | integer     | null: false                    |
+| deliverydate_id   | integer     | null: false                    |
+| price             | integer     | null: false                    |
+| user              | references  | foreign_key: true              |
 
 
 
@@ -57,8 +57,8 @@
 
 | Column             | Type       | Options                        |
 | -------------------| ---------- | ------------------------------ |
-| user_id            | references | null: false, foreign_key: true |
-| item_id            | references | null: false, foreign_key: true |
+| user               | references | foreign_key: true              |
+| item               | references | foreign_key: true              |
 
 ### Association
 
@@ -74,13 +74,13 @@
 
 | Column             | Type       | Options                        |
 | -------------------| -----------| -----------------------------  |
-| postalcode         | string     | NOT NULL                       |
-| prefectures        | string     | NOT NULL                       |
-| municipality       | string     | NOT NULL                       |
-| address            | string     | NOT NULL                       | 
-| buildingname       | string     | NOT NULL                       |
-| phonenumber        | string     | NOT NULL                       |
-| product_record_id  | references | null: false, foreign_key: true |
+| postalcode         | string     | null: false                    |
+| prefectures        | string     | null: false                    |
+| municipality       | string     | null: false                    |
+| address            | string     | null: false                    | 
+| buildingname       | string     | null: false                    |
+| phonenumber        | string     | null: false                    |
+| product_record     | references | foreign_key: true              |
 
 
 ### Association
