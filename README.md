@@ -5,7 +5,7 @@
 | Column            | Type   | Options                |
 | ------------------| ------ | -----------------------|
 | nickname          | string | NOT NULL               |
-| email             | string | NOT NULL               |
+| email             | string | NOT NULL  unique: true |
 | password          | string | NOT NULL  unique: true |
 | firstname         | string | NOT NULL               |
 | lastname          | string | NOT NULL               |
