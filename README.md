@@ -60,6 +60,7 @@
 | -------------------| ---------- | ------------------------------ |
 | user_id            | references | null: false, foreign_key: true |
 | item_id            | references | null: false, foreign_key: true |
+| purchaserecord_id  | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -75,11 +76,12 @@
 
 | Column         | Type       | Options                       |
 | ---------------| -----------| ----------------------------- |
-| postal code    | string     | NOT NULL                      |
+| postalcode     | string     | NOT NULL                      |
 | prefectures    | string     | NOT NULL                      |
 | municipality   | string     | NOT NULL                      |
 | address        | string     | NOT NULL                      | 
-| phone number   | string     | NOT NULL                      |
+| buildingname   | string     | NOT NULL                      |
+| phonenumber    | string     | NOT NULL                      |
 
 
 ### Association
