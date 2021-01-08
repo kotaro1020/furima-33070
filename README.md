@@ -46,7 +46,6 @@
 
 - belongs_to :user
 - has_one    :product_record
-- has_one    :shipping_address
 
 
 
