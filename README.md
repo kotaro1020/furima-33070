@@ -29,7 +29,7 @@
 
 | Column            | Type        | Options                        |
 | ------------------| ----------- | -----------------------------  |
-| productname      | string      | null: false                    |
+| productname       | string     | null: false                     |
 | explanation       | text        | null: false                    |
 | category_id       | integer     | null: false                    |
 | productstate_id   | integer     | null: false                    | 
@@ -75,7 +75,7 @@
 | Column             | Type       | Options                        |
 | -------------------| -----------| -----------------------------  |
 | postalcode         | string     | null: false                    |
-| prefectures        | string     | null: false                    |
+| region_id          | integer    | null: false                    |
 | municipality       | string     | null: false                    |
 | address            | string     | null: false                    | 
 | buildingname       | string     |                                |
