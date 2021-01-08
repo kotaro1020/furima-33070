@@ -58,9 +58,8 @@
 
 | Column             | Type       | Options                        |
 | -------------------| ---------- | ------------------------------ |
-| who bought what    | string     | NOT NULL                       |
-| user               | references | null: false, foreign_key: true |
-| item               | references | null: false, foreign_key: true |
+| user_id            | references | null: false, foreign_key: true |
+| item_id            | references | null: false, foreign_key: true |
 
 ### Association
 
