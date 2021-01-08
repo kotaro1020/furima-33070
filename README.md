@@ -6,7 +6,7 @@
 | ------------------| ------ | -----------------------|
 | nickname          | string | NOT NULL               |
 | email             | string | NOT NULL  unique: true |
-| password          | string | NOT NULL  unique: true |
+| encrypted_password| string | NOT NULL   　　　　　　　|
 | firstname         | string | NOT NULL               |
 | lastname          | string | NOT NULL               |
 | firstname_kana    | string | NOT NULL               |
