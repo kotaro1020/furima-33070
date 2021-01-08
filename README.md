@@ -59,7 +59,6 @@
 | -------------------| ---------- | ------------------------------ |
 | user_id            | references | null: false, foreign_key: true |
 | item_id            | references | null: false, foreign_key: true |
-| purchaserecord_id  | references | null: false, foreign_key: true |
 
 ### Association
 
