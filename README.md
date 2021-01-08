@@ -14,14 +14,6 @@
 | birthday          | date   | NOT NULL               |
 
 
-
-
-
-
-
-
-
-
 ### Association
 
 - has_many :items
@@ -35,16 +27,17 @@
 
 ## items テーブル
 
-| Column         | Type       | Options                        |
-| ---------------| -----------| -----------------------------  |
-| product name   | string     | NOT NULL                       |
-| explanation    | text       | NOT NULL                       |
-| product state  | string     | NOT NULL                       | 
-| delivery fee   | string     | NOT NULL                       |
-| region         | string     | NOT NULL                       |
-| date           | string     | NOT NULL                       |
-| price          | string     | NOT NULL                       |
-| user           | references | null: false, foreign_key: true |
+| Column            | Type        | Options                        |
+| ------------------| ----------- | -----------------------------  |
+| product name      | string      | NOT NULL                       |
+| explanation       | text        | NOT NULL                       |
+| productstate_id   | integer     | NOT NULL                       | 
+| deliveryfee_id    | integer     | NOT NULL                       |
+| region_id         | integer     | NOT NULL                       |
+| deliverydate_id   | integer     | NOT NULL                       |
+| price_id          | integer     | NOT NULL                       |
+| category_id       | integer     | NOT NULL                       |
+| user_id           | references  | null: false, foreign_key: true |
 
 
 
