@@ -36,7 +36,7 @@
 | deliveryfee_id    | integer     | NOT NULL                       |
 | region_id         | integer     | NOT NULL                       |
 | deliverydate_id   | integer     | NOT NULL                       |
-| price_id          | integer     | NOT NULL                       |
+| price         　　　| integer    | NOT NULL                       |
 | user_id           | references  | null: false, foreign_key: true |
 
 
