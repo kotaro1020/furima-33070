@@ -2,43 +2,87 @@
 
 ## users テーブル
 
-| Column      | Type   | Options     |
-| ----------  | ------ | ----------- |
-| email       | string | NOT NULL    |
-| password    | string | NOT NULL    |
-| name        | string | NOT NULL    |
-| profile     | text   | NOT NULL    |
-| occupation  | text   | NOT NULL    |
-| position    | text   | NOT NULL    |
+| Column             | Type   | Options                    |
+| ------------------ | ------ | ---------------------------|
+| nickname           | string | null: false                |
+| email              | string | null: false  unique: true  |
+| encrypted_password | string | null: false                |
+| firstname          | string | null: false                |
+| lastname           | string | null: false                |
+| firstname_kana     | string | null: false                |
+| lastname_kana      | string | null: false                |
+| birthday           | date   | null: false                |
+
 
 ### Association
 
 - has_many :items
-- has_many :comments
+- has_many :product_records
+
+
+
+
+
+
 
 ## items テーブル
 
-| Column      | Type       | Options                       |
-| ----------- | -----------| ----------------------------- |
-| title       | string     | NOT NULL                      |
-| catch_copy  | text       | NOT NULL                      |
-| concept     | image      | NOT NULL                      |
-| user        | references | null: false, foreign_key: true| 
+| Column            | Type        | Options                        |
+| ------------------| ----------- | -----------------------------  |
+| productname       | string     | null: false                     |
+| explanation       | text        | null: false                    |
+| category_id       | integer     | null: false                    |
+| productstate_id   | integer     | null: false                    | 
+| deliveryfee_id    | integer     | null: false                    |
+| region_id         | integer     | null: false                    |
+| deliverydate_id   | integer     | null: false                    |
+| price             | integer     | null: false                    |
+| user              | references  | foreign_key: true              |
+
+
+
 
 ### Association
 
 - belongs_to :user
-- has_many :comments
+- has_one    :product_record
 
-## comments テーブル
 
-| Column      | Type       | Options                        |
-| ----------- | ---------- | ------------------------------ |
-| text        | text       | NOT NULL                       |
-| user        | references | null: false, foreign_key: true |
-| prototype   | references | null: false, foreign_key: true |
+
+
+
+
+
+## product_record テーブル
+
+| Column             | Type       | Options                        |
+| -------------------| ---------- | ------------------------------ |
+| user               | references | foreign_key: true              |
+| item               | references | foreign_key: true              |
 
 ### Association
 
 - belongs_to :user
 - belongs_to :items
+- has_one    :shipping_address
+
+
+
+
+
+## shipping_address テーブル
+
+| Column             | Type       | Options                        |
+| -------------------| -----------| -----------------------------  |
+| postalcode         | string     | null: false                    |
+| region_id          | integer    | null: false                    |
+| municipality       | string     | null: false                    |
+| address            | string     | null: false                    | 
+| buildingname       | string     |                                |
+| phonenumber        | string     | null: false                    |
+| product_record     | references | foreign_key: true              |
+
+
+### Association
+
+- belongs_to :product_record
