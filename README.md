@@ -74,14 +74,15 @@
 
 ## shipping_address テーブル
 
-| Column         | Type       | Options                       |
-| ---------------| -----------| ----------------------------- |
-| postalcode     | string     | NOT NULL                      |
-| prefectures    | string     | NOT NULL                      |
-| municipality   | string     | NOT NULL                      |
-| address        | string     | NOT NULL                      | 
-| buildingname   | string     | NOT NULL                      |
-| phonenumber    | string     | NOT NULL                      |
+| Column             | Type       | Options                        |
+| -------------------| -----------| -----------------------------  |
+| postalcode         | string     | NOT NULL                       |
+| prefectures        | string     | NOT NULL                       |
+| municipality       | string     | NOT NULL                       |
+| address            | string     | NOT NULL                       | 
+| buildingname       | string     | NOT NULL                       |
+| phonenumber        | string     | NOT NULL                       |
+| product_record_id  | references | null: false, foreign_key: true |
 
 
 ### Association
