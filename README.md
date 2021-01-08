@@ -2,16 +2,16 @@
 
 ## users テーブル
 
-| Column            | Type   | Options                |
-| ------------------| ------ | -----------------------|
-| nickname          | string | NOT NULL               |
-| email             | string | NOT NULL  unique: true |
-| encrypted_password| string | NOT NULL   　　　　　　　|
-| firstname         | string | NOT NULL               |
-| lastname          | string | NOT NULL               |
-| firstname_kana    | string | NOT NULL               |
-| lastname_kana     | string | NOT NULL               |
-| birthday          | date   | NOT NULL               |
+| Column             | Type   | Options                 |
+| ------------------ | ------ | ----------------------- |
+| nickname           | string | NOT NULL                |
+| email              | string | NOT NULL  unique: true  |
+| encrypted_password | string | NOT NULL                |
+| firstname          | string | NOT NULL                |
+| lastname           | string | NOT NULL                |
+| firstname_kana     | string | NOT NULL                |
+| lastname_kana      | string | NOT NULL                |
+| birthday           | date   | NOT NULL                |
 
 
 ### Association
@@ -31,12 +31,12 @@
 | ------------------| ----------- | -----------------------------  |
 | product name      | string      | NOT NULL                       |
 | explanation       | text        | NOT NULL                       |
+| category_id       | integer     | NOT NULL                       |
 | productstate_id   | integer     | NOT NULL                       | 
 | deliveryfee_id    | integer     | NOT NULL                       |
 | region_id         | integer     | NOT NULL                       |
 | deliverydate_id   | integer     | NOT NULL                       |
 | price_id          | integer     | NOT NULL                       |
-| category_id       | integer     | NOT NULL                       |
 | user_id           | references  | null: false, foreign_key: true |
 
 
