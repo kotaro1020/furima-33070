@@ -54,7 +54,7 @@
 
 
 
-## product record テーブル
+## product_record テーブル
 
 | Column             | Type       | Options                        |
 | -------------------| ---------- | ------------------------------ |
@@ -72,7 +72,7 @@
 
 
 
-## shipping address テーブル
+## shipping_address テーブル
 
 | Column         | Type       | Options                       |
 | ---------------| -----------| ----------------------------- |
