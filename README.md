@@ -2,11 +2,25 @@
 
 ## users テーブル
 
-| Column      | Type   | Options                |
-| ------------| ------ | -----------------------|
-| nickname    | string | NOT NULL               |
-| email       | string | NOT NULL               |
-| password    | string | NOT NULL  unique: true |
+| Column            | Type   | Options                |
+| ------------------| ------ | -----------------------|
+| nickname          | string | NOT NULL               |
+| email             | string | NOT NULL               |
+| password          | string | NOT NULL  unique: true |
+| firstname         | string | NOT NULL               |
+| lastname          | string | NOT NULL               |
+| firstname_kana    | string | NOT NULL               |
+| lastname_kana     | string | NOT NULL               |
+| birthday          | string | NOT NULL               |
+
+
+
+
+
+
+
+
+
 
 ### Association
 
