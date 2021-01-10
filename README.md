@@ -86,3 +86,5 @@
 ### Association
 
 - belongs_to :product_record
+
+
