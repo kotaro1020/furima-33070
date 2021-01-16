@@ -75,7 +75,6 @@ RSpec.describe Item, type: :model do
       it "ユーザーが紐付いていないとツイートは保存できない" do
         @item.user = nil
         @item.valid?
-        binding.pry
         expect(@item.errors.full_messages).to include("User must exist")
       end
     end
