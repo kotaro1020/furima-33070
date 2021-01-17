@@ -28,27 +28,27 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Explanation can't be blank")
       end
       it 'category_idが「---」では登録できない' do
-        @item.category_id = '1'
+        @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Category is not a number")
       end
       it 'productstate_idが「---」では登録できない' do
-        @item.productstate_id = '1'
+        @item.productstate_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Productstate is not a number")
       end
       it 'deliveryfee_idが「---」では登録できない' do
-        @item.deliveryfee_id = '1'
+        @item.deliveryfee_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Deliveryfee is not a number")
       end
       it 'region_idが「---」では登録できない' do
-        @item.region_id = '1'
+        @item.region_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Region is not a number")
       end
       it 'deliverydate_idが「---」では登録できない' do
-        @item.deliverydate_id = '1'
+        @item.deliverydate_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Deliverydate is not a number")
       end
@@ -68,7 +68,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")
       end
       it 'priceが全角数字では登録できない' do
-        @item.price = '５００'
+        @item.price = ５００
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is not a number")
       end
