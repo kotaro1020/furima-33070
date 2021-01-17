@@ -28,27 +28,27 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Explanation can't be blank")
       end
       it 'category_idが「---」では登録できない' do
-        @item.category_id = '---'
+        @item.category_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Category is not a number")
       end
       it 'productstate_idが「---」では登録できない' do
-        @item.productstate_id = '---'
+        @item.productstate_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Productstate is not a number")
       end
       it 'deliveryfee_idが「---」では登録できない' do
-        @item.deliveryfee_id = '---'
+        @item.deliveryfee_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Deliveryfee is not a number")
       end
       it 'region_idが「---」では登録できない' do
-        @item.region_id = '---'
+        @item.region_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Region is not a number")
       end
       it 'deliverydate_idが「---」では登録できない' do
-        @item.deliverydate_id = '---'
+        @item.deliverydate_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Deliverydate is not a number")
       end
