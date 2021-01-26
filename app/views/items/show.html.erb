@@ -9,6 +9,7 @@
     <div class='item-img-content'>
       <%# <%= image_tag "item-sample.png", class:"item-box-img" %> 
       <%= image_tag @item.image, class:"item-box-img" if @item.image.attached? %>
+      <% if item.product_record.present? %>
       <div class='sold-out'>
         <span>Sold Out!!</span>
       </div>
