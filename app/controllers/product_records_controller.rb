@@ -1,12 +1,14 @@
 class ProductRecordsController < ApplicationController
+  before_action :set_item, only: [:index, :create]
+  before_action :authenticate_user!, only: [:index]
+  before_action :contributor_confirmation, only: [:index]
+  
   def index
     @product_record = PayForm.new
-    @item = Item.find(params[:item_id])
   end
 
  
   def create
-    @item = Item.find(params[:item_id])
     @product_record = PayForm.new(product_record_params)
      if @product_record.valid?
       pay_item
@@ -29,5 +31,13 @@ class ProductRecordsController < ApplicationController
         card: product_record_params[:token],
         currency: 'jpy'
       )
+end
+
+def set_item
+  @item = Item.find(params[:item_id])
+end
+
+def contributor_confirmation
+  redirect_to root_path if current_user == @item.user || @item.product_record != nil
 end
 end
