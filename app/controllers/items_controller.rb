@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show, :edit]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :contributor_confirmation, only: [:edit]
   
   def index
@@ -23,7 +23,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    redirect_to root_path if current_user.id != @item.user.id
   end
 
   def update
@@ -53,6 +52,6 @@ class ItemsController < ApplicationController
   end
 
   def contributor_confirmation
-    redirect_to root_path if current_user == @item.user || current_user != @item.user
+    redirect_to root_path if @item.product_record != nil || current_user != @item.user
   end
 end
