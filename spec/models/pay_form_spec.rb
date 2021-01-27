@@ -50,6 +50,12 @@ RSpec.describe PayForm, type: :model do
         @pay_form.valid?
         expect(@pay_form.errors.full_messages).to include("Phonenumber can't be blank")
       end
+      it 'phonenumberにhyphen(-)があると購入できない' do
+        @pay_form.phonenumber = '090-1111-1111'
+        @pay_form.valid?
+        binding.pry
+        expect(@pay_form.errors.full_messages).to include("Phonenumber is invalid")
+      end
       it 'phonenumberが全角では購入できない' do
         @pay_form.phonenumber = '０９０１１１１１１１１'
         @pay_form.valid?
