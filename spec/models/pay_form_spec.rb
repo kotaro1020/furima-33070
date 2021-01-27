@@ -13,6 +13,10 @@ RSpec.describe PayForm, type: :model do
       it 'postalcode、region_id、municipality、address、phonenumber、tokenが存在すれば購入できる' do
         expect(@pay_form).to be_valid
       end
+      it 'buildingnameは空でも購入できる' do
+        @pay_form.buildingname = ''
+        expect(@pay_form).to be_valid
+      end
     end
     context '商品を購入できないとき' do
       it 'municipalityが空では購入できない' do
@@ -53,7 +57,6 @@ RSpec.describe PayForm, type: :model do
       it 'phonenumberにhyphen(-)があると購入できない' do
         @pay_form.phonenumber = '090-1111-1111'
         @pay_form.valid?
-        binding.pry
         expect(@pay_form.errors.full_messages).to include("Phonenumber is invalid")
       end
       it 'phonenumberが全角では購入できない' do
